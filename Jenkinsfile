@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            agent {
-                docker {
-                    image 'node:18-alpine'
-                    reuseNode true
-                }
+        agent {
+            docker {
+                image 'node:18-alpine'
+                reuseNode true
             }
+        }
+        stage('Build') {
             steps {
                 sh '''
                     # 문제 발생 시 도움이될 정보들 출력
